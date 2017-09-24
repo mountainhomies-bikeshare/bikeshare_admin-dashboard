@@ -13,7 +13,7 @@ Empowered by [Blur-Admin](http://akveo.com/blur-admin-mint/)
 #### Dashboard Tracking:
 As a bike owner, you can view all the bikes you rent out powered by HyperTrack's [Visual](https://www.hypertrack.com/blog/2016/04/19/hypertracks-tracking-experience/)
 
-![Demo](docs/img/Tracking.png)
+![Demo](admin-dashboard/docs/img/Tracking.png)
 
 
 
