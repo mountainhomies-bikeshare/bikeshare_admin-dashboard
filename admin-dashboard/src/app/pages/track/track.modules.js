@@ -65,7 +65,8 @@
         //     // var action = track.action; //get action object in sync.
         // }
         //widgets
-        $scope.widgetUrl = $sce.trustAsResourceUrl("https://dashboard.hypertrack.com/map/users?ordering=-last_heartbeat_at&key=sk_0eeeb6548add587a5338ced6eaf6fab2b9df5364");
+        $scope.widgetUrl = $sce.trustAsResourceUrl(
+            "https://dashboard.hypertrack.com/map/users?ordering=-last_heartbeat_at&key=sk_0eeeb6548add587a5338ced6eaf6fab2b9df5364");
 
     }
 })();

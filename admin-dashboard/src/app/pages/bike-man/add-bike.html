@@ -1,0 +1,66 @@
+<div class="modal-wrapper">
+    <div>
+
+        
+        <div>
+            <form>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Give Your Bike a Tag Name</label>
+                        <input type="text" class="form-control" ng-model="bike.name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Deadline</label>
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="bike.deadline" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Price Per Hour</label>
+                        <input type="number" class="form-control" ng-model="bike.price">
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="">Current Location</label>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputFirstName">Street Address</label>
+                                <input ng-model="place.address" type="text" class="form-control" id="inputFirstName">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputFirstName">Zip Code</label>
+                                <input ng-model="place.zip_code" type="text" class="form-control" id="inputFirstName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputFirstName">City</label>
+                                <input ng-model="place.city" type="text" class="form-control" id="inputFirstName">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputFirstName">State</label>
+                                <input ng-model="place.state" type="text" class="form-control" id="inputFirstName">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" ng-click="ok()">Submit</button>
+            <button type="submit" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

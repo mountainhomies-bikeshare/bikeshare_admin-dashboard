@@ -1,0 +1,72 @@
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Bikes Management" ba-panel-class="with-scroll">
+                <div class="add-row-editable-table">
+                    <button class="btn btn-primary" ng-click="addBike()">Add A Bike</button>
+                </div>
+                <table class="table table-bordered table-hover table-condensed">
+                    <tr>
+                        <td></td>
+                        <td>Tag Name</td>
+                        <td>Status</td>
+                        <td>Deadline</td>
+                        <td>Price</td>
+                        <td>Actions</td>
+                    </tr>
+                    <tbody ng-repeat="bike in bikes" class="editable-row">
+                        <tr>
+                            <td>
+                                {{$index}}
+                            </td>
+                            <td>
+                                <span editable-text="bike.name" e-name="name" e-form="rowform" e-required>{{ bike.name || 'empty' }}</span>
+                            </td>
+                            <td class="select-td">
+                                {{ showStatus(bike) }}
+                            </td>
+                            <td>
+                                <span><a href="#" editable-bsdate="bike.deadline" e-is-open="opened.$data" e-ng-click="open($event,'$data')" e-datepicker-popup="dd-MMMM-yyyy">
+                               {{ (bike.deadline | date:"dd/MM/yyyy") || 'empty' }}
+                            </a></span>
+                            </td>
+                            <td>
+                                <span>{{bike.price | currency : '$'}}</span>
+                            </td>
+                            <td>
+                                <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == bike">
+                                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+                                        Save
+                                    </button>
+                                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+                                        Cancel
+                                    </button>
+                                </form>
+                                <div class="buttons" ng-show="!rowform.$visible">
+                                    <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
+                                    <button class="btn btn-danger editable-table-button btn-xs" ng-click="removebike($index)">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr ng-show="!!bike.is_on_loan">
+                            <td colspan="6">
+                                <div class="row">
+                                    <h3>Details</h3></div>
+                                <div class="row">
+                                    <iframe ng-show="!!bike.is_on_loan" ng-src="{{getUrl(bike)}}" width="100%" height="400"></iframe>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <h5>Rent Collected Last Month</h5>
+                                        <div id="barChart" class="admin-chart" ng-controller="BarChartCtrl"></div>
+                                    </div>
+                                </div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
