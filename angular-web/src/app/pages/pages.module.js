@@ -9,6 +9,7 @@
     'ui.router',
 
     'BlurAdmin.pages.track',
+    'BlurAdmin.pages.bike-man',
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.components',
